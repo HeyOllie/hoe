@@ -1,0 +1,27 @@
+# Use the Very Good Analysis baseline (includes the default rules from the package)
+include: package:very_good_analysis/analysis_options.yaml
+
+analyzer:
+  # Exclude generated files from analysis
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/*.config.dart"
+    - "**/generated/**"
+    - "**/build/**"
+  
+  # Enable strict mode for maximum type safety
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+
+linter:
+  rules:
+    # We want to allow lines longer than 80 characters
+    lines_longer_than_80_chars: false
+
+    # We want to always specify types
+    omit_local_variable_types: false
+    always_specify_types: true
+    cascade_invocations: false
